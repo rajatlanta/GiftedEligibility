@@ -1,0 +1,124 @@
+<div class="container">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+          <b>Full Name:</b><label id="lblFullName">A</label> &nbsp;&nbsp;
+          <b>Student GTID:</b><label id="lblFullName">B</label>
+      </div>
+     </div>   
+     <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <b>DOB:</b><label id="lblFullName">C</label>&nbsp;&nbsp;
+            <b>School:</b><label id="lblFullName">D</label>
+        </div>
+       </div>   
+       <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <b>Eligibility Status:</b><label id="lblFullName">F</label>&nbsp;&nbsp;
+            <b>Last Updated:</b><label id="lblFullName">G</label>
+            <input type="text" [disabled]="IsDisabled" value="Moota">
+        </div>
+       </div>
+       <div>
+           <input type="button" (click)="SaveElgibilityDetails()" value="Save" class="btn btn-primary" text="Save">&nbsp;&nbsp;
+           <input type="button" value="Go Back" class="btn btn-primary" text="Save">
+       </div>   
+</div>
+<!-- {{ GTID }} | {{ StudentName }} <br> -->
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <!-- <select #Select [(ngModel)]="assessmentIDSelected" (change)="changedAssessment($event)"  class="form-control" name="ddldepartment">
+            <option  *ngFor="let y of Assessments" [value]="y.id">{{ y.text }}</option>
+           </select>  -->
+
+
+
+        </div>
+        <!-- <div class="col-10">
+            <div *ngFor="let score of scoresFilteredList">
+                {{ score.text }} <input type="text" style="width: 45px;">&nbsp;
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<!-- <div *ngFor="let selectedAssessment of SelectedAssessments">
+    {{ selectedAssessment }}
+    <div *ngFor="let score of scoresFilteredList">
+        {{ score.text }} <input type="text" style="width: 45px;">&nbsp;
+    </div>
+</div> -->
+
+
+
+<!-- <div *ngFor="let selectedAssessment of assessment1">
+    {{ selectedAssessment.text }}
+    <div *ngFor="let score of selectedAssessment.AssessmentScores">
+        {{ score.text }} <input type="text" style="width: 45px;">&nbsp;
+    </div>
+</div> -->
+
+<!-- <div *ngFor="let selectedAssessment of SelectedAssessments">
+    {{ selectedAssessment.text }}
+    <input type="text" style="width: 45px;">
+    <div *ngFor="let score of selectedAssessment.AssessmentScores">
+        {{ score.text }} <input type="text" style="width: 45px;">&nbsp;
+    </div>
+    <input id="male" type="radio" class="custom-control-input" value="male" name="gender" ngModel>
+    <label class="custom-control-label" for="male">Yes</label>
+    <input id="male" type="radio" class="custom-control-input" value="male" name="gender" ngModel>
+    <label class="custom-control-label" for="male">No</label>
+    <input type="button" value="Delete" class="btn btn-danger">
+</div> -->
+
+<div class="container">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Data Source</th>
+          <th scope="col">Date</th>
+          <th scope="col">Scores</th>
+          
+          <th scope="col">Met Criteria</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+        <tr *ngFor="let selectedAssessment of SelectedAssessments">
+          <td>{{selectedAssessment.text}}</td>
+          <td><input type="text" style="width: 45px;">&nbsp;</td>
+          <td>
+            <div *ngFor="let score of selectedAssessment.AssessmentScores">
+                {{ score.text }} <input type="text" style="width: 45px;">&nbsp;
+            </div>
+          </td>
+          <td> <input id="male" type="radio" class="custom-control-input" value="male" name="gender" ngModel>
+            <label class="custom-control-label" for="male">Yes</label>
+            <input id="male" type="radio" class="custom-control-input" value="male" name="gender" ngModel>
+            <label class="custom-control-label" for="male">No</label></td>
+          <td> <input type="button" value="Delete" (click)="delete(selectedAssessment.id)" class="btn btn-danger"></td>
+          <!-- <td><input type="button" name="Edit" value="Edit" (click)="editEmployee(employee.employeeID)" class="btn btn-info btn-sm"> &nbsp;<input type="button" name="Delete" value="Delete" (click)="deleteEmployee(employee.employeeID)" class="btn btn-danger btn-sm"></td> -->
+        </tr>
+        <tr>
+            <td>
+                <select #Select [(ngModel)]="assessmentIDSelected" (change)="changedAssessment($event)"  class="form-control" name="ddldepartment">
+                    <option  *ngFor="let y of Assessments" [value]="y.id">{{ y.text }}</option>
+                </select> 
+            </td>
+        </tr>
+   
+      </tbody>
+  </table>
+</div></div>
+</div>
+
+
+
